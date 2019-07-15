@@ -1,20 +1,14 @@
 import React from 'react'
 import './Home.css'
 import { movies$ } from './../../movies'
-import RecipeReviewCard from './../../components/RecipeReviewCard';
-import GridList from '@material-ui/core/GridList';
+import MovieCard from './../../components/MovieCard';
 import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import magicCinema from '../../assets/movie-magic-1.png';
-import DialogMenu from '../../components/Dialog/DialogMenu'
+import Filter from '../../components/Filter'
 
 const classes = theme => ({
   root: {
-    // display: 'flex',
-    // flexWrap: 'wrap',
-    // overflow: 'hidden',
-    // backgroundColor: 'trasparent',
     flexGrow: 1
   },
   gridCard: {
@@ -59,7 +53,7 @@ class Home extends React.Component {
   }
 
   showMovies = () => {
-    const nbrView = this.props.base.nbrView ;
+    const nbrView = this.props.base.nbrView;
     const baseMovies = this.props.base.movies;
     const categories = this.props.base.visiblesCategories;
     let movies = [];
@@ -69,7 +63,7 @@ class Home extends React.Component {
         (categories.length !== 0 && categories.indexOf(baseMovies[count].category) > -1)) {
         movies.push(
           <Grid item xs={12} sm={6} md={3}>
-            <RecipeReviewCard key={count} movie={baseMovies[count]} style={{ position: 'relative', left: '50%', transform: 'translate(-50%, 0)' }} />
+            <MovieCard key={count} movie={baseMovies[count]} style={{ position: 'relative', left: '50%', transform: 'translate(-50%, 0)' }} />
           </Grid>
         );
       }
@@ -99,7 +93,7 @@ class Home extends React.Component {
       <div className={classes.root}>
         <Grid container direction="row" justify="center" alignItems="flex-start" spacing={0}>
           <Grid xs={12} sm={12} md={7} className={classes.SelectComponent}>
-            <DialogMenu />
+            <Filter />
           </Grid>
           <Grid xs={6} sm={10} md={10}>
             <Grid container direction="row" justify="center" alignItems="flex-start" spacing={0}>

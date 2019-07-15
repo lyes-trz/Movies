@@ -1,8 +1,8 @@
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-
-import * as actions from '../../actions'
+import * as actions from '../../action'
 import Home from './Home'
+
 
 const mapStateToProps = state => ({
     base: state.base,
