@@ -12,7 +12,7 @@ import Typography from '@material-ui/core/Typography';
 import Likes from './Likes';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as actions from '../action';
+import * as action from '../action';
 
 
 const styles = theme => ({
@@ -140,7 +140,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    getServiceData: bindActionCreators(actions.getServiceData, dispatch),
+    getServiceData: bindActionCreators(action.getServiceData, dispatch),
 })
 
 

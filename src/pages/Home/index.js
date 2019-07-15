@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import * as actions from '../../action'
+import * as action from '../../action'
 import Home from './Home'
 
 
@@ -9,9 +9,9 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    getServiceData: bindActionCreators(actions.getServiceData, dispatch),
-    getServiceCategories: bindActionCreators(actions.getServiceCategories, dispatch),
-    setView: bindActionCreators(actions.setView, dispatch),
+    getServiceData: bindActionCreators(action.getServiceData, dispatch),
+    getServiceCategories: bindActionCreators(action.getServiceCategories, dispatch),
+    setView: bindActionCreators(action.setView, dispatch),
 })
 
 const HomeContainer = connect(mapStateToProps, mapDispatchToProps)(Home)
