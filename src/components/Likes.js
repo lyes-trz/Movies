@@ -6,7 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import { withStyles } from "@material-ui/core/styles";
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as action from '../action';
+import * as actions from '../actions';
 
 
 const styles = theme => ({
@@ -106,7 +106,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    getServiceData: bindActionCreators(action.getServiceData, dispatch),
+    getServiceData: bindActionCreators(actions.getServiceData, dispatch),
 })
 
 export default withStyles(styles)(

@@ -12,7 +12,7 @@ import Typography from '@material-ui/core/Typography';
 import Likes from './Likes';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as action from '../action';
+import * as actions from '../actions';
 
 
 const styles = theme => ({
@@ -56,7 +56,7 @@ const styles = theme => ({
     }
 });
 
-class RecipeReviewCard extends React.Component {
+class MovieCard extends React.Component {
     value = (this.props.movie.likes / (this.props.movie.dislikes + this.props.movie.likes)) * 100;
     state = {
         expanded: false,
@@ -132,7 +132,7 @@ class RecipeReviewCard extends React.Component {
     }
 }
 
-RecipeReviewCard.propTypes = {
+MovieCard.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 const mapStateToProps = state => ({
@@ -140,10 +140,11 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    getServiceData: bindActionCreators(action.getServiceData, dispatch),
+    getServiceData: bindActionCreators(actions.getServiceData, dispatch),
 })
 
 
+
 export default withStyles(styles)(
-    connect(mapStateToProps, mapDispatchToProps)(RecipeReviewCard)
+    connect(mapStateToProps, mapDispatchToProps)(MovieCard)
 );

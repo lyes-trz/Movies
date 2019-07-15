@@ -13,7 +13,7 @@ import Typography from "@material-ui/core/Typography";
 import { withStyles } from '@material-ui/core/styles';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as action from '../action';
+import * as actions from '../actions';
 
 const classes = theme => ({
     formControl: {
@@ -91,6 +91,7 @@ class Filter extends React.Component {
 
     render() {
         const { classes } = this.props;
+        console.log(this.props.base)
         return (
 
             <Card style={{ padding: '10px' }}>
@@ -117,15 +118,18 @@ class Filter extends React.Component {
                                 renderValue={selected => selected.join(', ')}
                                 MenuProps={MenuProps}
                             >
-                                {this.props.base.categories.map(name => (
-                                    <MenuItem key={name} value={name} >
-                                        <Checkbox
-                                            checked={this.state.name.indexOf(name) > -1}
-                                            color='default'
-                                        />
-                                        <ListItemText primary={name} />
-                                    </MenuItem>
-                                ))}
+
+                                {this.props.base.categories.map(name =>
+                                    (
+
+                                        <MenuItem key={name} value={name} >
+                                            <Checkbox
+                                                checked={this.state.name.indexOf(name) > -1}
+                                                color='default'
+                                            />
+                                            <ListItemText primary={name} />
+                                        </MenuItem>
+                                    ))}
                             </Select>
                         </FormControl>
                     </Grid>
@@ -168,16 +172,20 @@ class Filter extends React.Component {
     }
 }
 
-const mapStateToProps = state => ({
-    base: state.base,
-})
+const mapStateToProps = state => {
+    return {
+        base: state.base,
+    };
+};
 
-const mapDispatchToProps = dispatch => ({
-    setVisibleCategories: bindActionCreators(action.setVisibleCategories, dispatch),
-    getServiceCategories: bindActionCreators(action.getServiceCategories, dispatch),
-    setView: bindActionCreators(action.setView, dispatch),
 
-})
+const mapDispatchToProps = dispatch => {
+    return {
+        setVisibleCategories: bindActionCreators(actions.setVisibleCategories, dispatch),
+        getServiceCategories: bindActionCreators(actions.getServiceCategories, dispatch),
+        setView: bindActionCreators(actions.setView, dispatch),
+    };
+};
 
 export default withStyles(classes)(
     connect(mapStateToProps, mapDispatchToProps)(Filter)
