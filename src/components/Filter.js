@@ -11,12 +11,9 @@ import Checkbox from '@material-ui/core/Checkbox';
 import Card from '@material-ui/core/Card';
 import Typography from "@material-ui/core/Typography";
 import { withStyles } from '@material-ui/core/styles';
-
-
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-
-import * as actions from '../action';
+import * as action from '../action';
 
 const classes = theme => ({
     formControl: {
@@ -36,7 +33,7 @@ const classes = theme => ({
     },
     select: {
         "&:after": {
-            borderColor: "red"
+            borderColor: "#f05e50"
         }
     }
 });
@@ -52,7 +49,7 @@ const MenuProps = {
     },
 };
 
-class DialogMenu extends React.Component {
+class Filter extends React.Component {
     state = {
         open: false,
         name: [],
@@ -108,10 +105,9 @@ class DialogMenu extends React.Component {
                                     color: "#ff978a",
                                     transform: "none",
                                     fontSize: "10px"
-                                }}
-                            >
+                                }}>
                                 Categories
-              </InputLabel>
+                            </InputLabel>
                             <Select
                                 className={classes.select}
                                 multiple
@@ -177,12 +173,12 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    setVisibleCategories: bindActionCreators(actions.setVisibleCategories, dispatch),
-    getServiceCategories: bindActionCreators(actions.getServiceCategories, dispatch),
-    setView: bindActionCreators(actions.setView, dispatch),
+    setVisibleCategories: bindActionCreators(action.setVisibleCategories, dispatch),
+    getServiceCategories: bindActionCreators(action.getServiceCategories, dispatch),
+    setView: bindActionCreators(action.setView, dispatch),
 
 })
 
 export default withStyles(classes)(
-    connect(mapStateToProps, mapDispatchToProps)(DialogMenu)
+    connect(mapStateToProps, mapDispatchToProps)(Filter)
 );
