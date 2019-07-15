@@ -1,3 +1,6 @@
+## 
+![moviesTest](https://user-images.githubusercontent.com/44152758/61224855-ad032500-a71f-11e9-95cc-90bc33f6996a.gif)
+
 ##  Movies : React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
