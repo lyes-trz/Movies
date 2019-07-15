@@ -35,6 +35,11 @@ const classes = theme => ({
         "&:after": {
             borderColor: "#f05e50"
         }
+    },
+    Label: {
+        color: "#ff978a",
+        transform: "none",
+        fontSize: "10px"
     }
 });
 
@@ -91,7 +96,6 @@ class Filter extends React.Component {
 
     render() {
         const { classes } = this.props;
-        console.log(this.props.base)
         return (
 
             <Card style={{ padding: '10px' }}>
@@ -102,11 +106,8 @@ class Filter extends React.Component {
                             <InputLabel
                                 ref={ref => { this.InputLabelRef = ref }}
                                 htmlFor="select-multiple-checkbox"
-                                style={{
-                                    color: "#ff978a",
-                                    transform: "none",
-                                    fontSize: "10px"
-                                }}>
+                                className={classes.Label}
+                            >
                                 Categories
                             </InputLabel>
                             <Select
@@ -137,11 +138,8 @@ class Filter extends React.Component {
                     <Grid item xs={12} sm={6} md={4}>
                         <FormControl style={{ width: '90%' }} >
                             <InputLabel htmlFor="age-simple"
-                                style={{
-                                    color: "#ff978a",
-                                    transform: "none",
-                                    fontSize: "10px"
-                                }}>Pages</InputLabel>
+                                className={classes.Label}
+                            >Pages</InputLabel>
                             <Select
                                 className={classes.select}
                                 value={this.state.nbr}

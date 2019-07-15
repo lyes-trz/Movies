@@ -11,15 +11,7 @@ const classes = theme => ({
   root: {
     flexGrow: 1
   },
-  gridCard: {
 
-    flexGrow: 1,
-
-  },
-  gridList: {
-    width: '80%',
-    height: '80%',
-  },
   button: {
     margin: '5px',
     padding: '2px 8px 2px 8px',

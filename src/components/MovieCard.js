@@ -53,6 +53,12 @@ const styles = theme => ({
             color: 'white',
             backgroundColor: "transparent"
         }
+    },
+    MovieTitle: {
+        fontSize: '20px', color: '#797979', marginTop: '-10px'
+    },
+    MovieCategory: {
+        fontSize: '10px', color: '#f05e50', marginTop: '-2px', marginBottom: '7px'
     }
 });
 
@@ -96,7 +102,6 @@ class MovieCard extends React.Component {
             <Card className={classes.card}>
 
                 <CardActionArea style={{ position: 'relative' }}>
-
                     <CardMedia
                         className={classes.media}
                         image={this.props.movie.image}
@@ -112,11 +117,8 @@ class MovieCard extends React.Component {
 
 
                 <CardContent>
-
-                    <Typography style={{ fontSize: '20px', color: '#797979', marginTop: '-10px' }}>{this.props.movie.title}</Typography>
-
-                    <Typography style={{ fontSize: '10px', color: '#f05e50', marginTop: '-2px', marginBottom: '7px' }}>{this.props.movie.category}</Typography>
-
+                    <Typography className={classes.MovieTitle}>{this.props.movie.title}</Typography>
+                    <Typography className={classes.MovieCategory}>{this.props.movie.category}</Typography>
                     <Likes movie={this.props.movie} />
                     <LinearProgress
                         className={classes.ratio}
@@ -125,7 +127,6 @@ class MovieCard extends React.Component {
                         valueBuffer={this.state.buffer}
                         classes={{ colorPrimary: classes.linearColorPrimary, barColorPrimary: classes.linearBarColorPrimary }}
                     />
-
                 </CardContent>
             </Card>
         );

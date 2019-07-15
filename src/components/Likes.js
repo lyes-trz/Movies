@@ -48,14 +48,6 @@ const styles = theme => ({
 
 class LikeDislike extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            Like: 0,
-            dislikes: 0
-        };
-
-    }
     dislikeMovie = () => {
         const newMovies = this.props.base.movies;
         const newsLikes = this.props.movie.dislikes + 1;
