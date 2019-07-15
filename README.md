@@ -1,9 +1,17 @@
-## 
+## Screenshot
 ![moviesTest](https://user-images.githubusercontent.com/44152758/61224855-ad032500-a71f-11e9-95cc-90bc33f6996a.gif)
+
+![2019-07-15](https://user-images.githubusercontent.com/44152758/61225140-47fbff00-a720-11e9-9551-bf207cd6f2e6.png)
+
+![2019-07-15 (1)](https://user-images.githubusercontent.com/44152758/61225178-577b4800-a720-11e9-9aae-1ed2eada793b.png)
+
 
 ##  Movies : React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Logo : 
+![Movies-logo](https://user-images.githubusercontent.com/44152758/61225278-898caa00-a720-11e9-8c12-ee97b76ef850.png)
 
 ## Available Scripts
 
